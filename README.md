@@ -1,17 +1,17 @@
-# Diagonal Difference
+# Dynamic Array
 
-**Category:** 2D Arrays / Matrices
+**Category:** Data Structures / Vectors
 
 ## Problem
-Given an n x n matrix, return the absolute difference between the sums of its two diagonals.
+Maintain n sequences. Query 1 x y appends y to seq[(x XOR lastAnswer) % n]. Query 2 x y sets lastAnswer = seq[(x XOR lastAnswer) % n][y % size] and records it.
 
 ## Approach
-Single pass over i: add arr[i][i] to the primary sum and arr[i][n-1-i] to the secondary sum, then take abs of the difference.
+List of lists; each query is one XOR, one modulo and one append or index, so every query is constant time.
 
 ## Complexity
 | Time | Space |
 | --- | --- |
-| O(N) | O(1) |
+| O(N + Q) | O(N + Q) |
 
 ## Run
 ```bash
